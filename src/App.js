@@ -4,20 +4,23 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <form>
+       <h1>Добрый день! Будем рады если Вы оцените качество нашей работы по 5-бальной шкале!</h1>
+       <div className="inputBox">
+         <div><input type="radio" name="star" value="1" />
+         <label>&#11088;</label> </div>
+         <div><input type="radio" name="star" value="1" />
+         <label>&#11088;&#11088;</label> </div>
+         <div><input type="radio" name="star" value="1" />
+         <label>&#11088;&#11088;&#11088;</label> </div>
+         <div><input type="radio" name="star" value="1" />
+         <label>&#11088;&#11088;&#11088;&#11088;</label> </div>
+         <div><input type="radio" name="star" value="1" />
+         <label>&#11088;&#11088;&#11088;&#11088;&#11088;</label> </div>
+        
+       </div>
+       <input type="submit" value="Отправить отзыв"/>
+     </form>
     </div>
   );
 }
