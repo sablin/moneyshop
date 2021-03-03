@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('./images/pattern.png');
+  background-image: url('./images/bg-bg.png');
 }
 .App-header {
   background-color: #282c34;
@@ -22,11 +22,12 @@
 }
 
 form{
-  width: 600px;
+  width: 400px;
   max-width: 100%;
   justify-content: center;
   padding: 50px 100px;
-  border: 1px solid black
+  background: url('./images/form-bg.png');
+  background-size: cover;
 }
 .inputBox{
   width: 265px;
@@ -35,10 +36,16 @@ form{
   margin-right: 100px
 }
 input[type=submit]{
-  padding: 10px 20px;
   border: none;
   box-shadow: 0px 2px 4px black;
   margin-top: 15px;
+  background: linear-gradient(
+180deg
+, #fce46e, #e2b709);
+  padding: 17px 41px;
+  border-radius: 11px;
+  font-size: 21px;
+  margin-top: 40px;
 }
 h1{
   color: white;
@@ -46,3 +53,70 @@ h1{
   text-shadow: 1px 1px 1px black;
 }
 
+.rating-area {
+	overflow: hidden;
+	width: 400px;
+	margin: 0 auto;
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+  width: 78px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 80px;
+  line-height: 82px;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb;
+  text-align: center;
+  float: right;
+
+}
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+.rating-area > input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: gold;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px goldenrod;
+}
+.rate-area > label:active {
+	position: relative;
+}
+.logo{
+  width: 350px;
+}
+h2{
+  color: white;
+    font-style: italic;
+}
+h2 span{
+  color: red;
+  text-shadow: white 0 0 2px;;
+}
+.inputBox{
+  width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    color: white;
+}
+.inputBox a{
+  color: white;
+}
+p{
+  color:white;
+}
