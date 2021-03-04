@@ -14,13 +14,14 @@ function App() {
      e.preventDefault();
     console.log(data)
      if(formRating < 5){
+      setFormState(2)
       fetch('https://flashformat.pro/moneyshop/api/2/index.php',{
       method: 'POST',
       headers: {
         'Content-Type': 'multipart/form-data'
       },
       body: data
-      }).then((res)=>console.log(res))
+      }).then((res)=> {setFormState(2)})
      }else{
        setFormState(1)
      }
@@ -31,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      {formState === 0 ? 
+      {formState === 0 &&
            <form className="formData" onSubmit={formSubmit}>
              <img className="logo" src={logo} />
            <h1>Добрый день! Будем рады если Вы оцените качество нашей работы по 5-бальной шкале!</h1>
@@ -50,7 +51,8 @@ function App() {
 </div>
          <input type="submit" value="Отправить"/>
          </form>
-         :
+}
+ {       formState === 1 && 
          <form>
          <h1>Большое спасибо за оценку!</h1>
          <h2>Получите <span>100</span> бонусных баллов на карту клиента*, оставив отзыв по одной из ссылок.</h2>
@@ -61,11 +63,10 @@ function App() {
          </div>
          <p>* Для получения бонусных баллов покажите отзыв в магазине</p>
        
-       </form>
-
-    }
-
- 
+       </form>}
+       {formState === 2 &&     <form>
+         <h1>Большое спасибо за оценку!</h1>   
+       </form>}
     </div>
   );
 }
